@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum of Numbers in a Range</title>
+  <style>
+    body {
+		background-image: linear-gradient(#393646,#ED2B2A,#D21312);
+		height: 600px;
+		font-family: Arial, sans-serif;
+		margin: 20px;
+    }
+
+    h1 {
+	  color: Blue;
+      text-align: center;
+    }
+
+    #result {
+	  color: Skyblue;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sum of Numbers in a Range</h1>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateSum() {
+      // Prompt the user for the starting number
+      var startNumber = parseInt(prompt("Enter the starting number:"));
+
+      // Prompt the user for the ending number
+      var endNumber = parseInt(prompt("Enter the ending number:"));
+
+      var sum = 0;
+
+      if (startNumber && endNumber && startNumber <= endNumber) {
+        for (var i = startNumber; i <= endNumber; i++) {
+          sum += i;
+        }
+
+        document.getElementById("result").innerHTML = "The sum of all numbers in the range is: " + sum;
+      } else {
+        document.getElementById("result").className = "error";
+        document.getElementById("result").innerHTML = "Invalid input! Please enter valid numbers.";
+      }
+
+      // Refresh the page after displaying the result
+      setTimeout(function() {
+        window.location.reload();
+      }, 3000);
+    }
+
+    calculateSum();
+  </script>
+</body>
+</html>
